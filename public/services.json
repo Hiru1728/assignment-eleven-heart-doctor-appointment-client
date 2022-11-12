@@ -1,0 +1,44 @@
+[
+    {
+        "_id": "1",
+        "balance": "$3,22",
+        "picture": "https://www.fortisescorts.in/uploaded_files/main/11950699.jpg",
+        "name": "Heart Valve Surgery",
+        "about": "There are four heart valves that open and close to regulate blood flow through the heart. Heart valve surgery treats diseases and defects of these valves of the heart. Ther are two main types of heart valvesurgery:Surgery to replace faulty heart valves Surgery to repair faulty heart valvesAt Stanford, we repair rather than replace heart valves whenever possible to preserve a patient's own heart valve.Types of Heart Valve Malfunction There are four valves of the heart:Mitral valve,Aortic valve,Tricuspid valve,Pulmonary valve.Heart disease can affect any of the four valves of the heart. Most commonly, it affects the mitral and aortic valves. Some types of heart valve disease are congenital and other types develop over time.There are two common types of heart valve malfunction:Regurgitation: The valve(s) does not close completely, causing the blood to flow backward instead of forward through the valve. Stenosis: The valve(s) opening becomes narrowed or does not form properly, inhibiting the flow of blood out of the ventricle or atria. The heart is forced to pump blood with increased force in order to move blood through the stiff (stenotic) valve(s).Heart valves can have one type of malfunction or have both types of valve malfunctions at the same time.\r\n"
+    },
+    {
+        "_id": "2",
+        "balance": "$2,74",
+        "picture": "https://static.wixstatic.com/media/957dc4_99950d0a46554d45926c5f69b5bc528d~mv2.jpg/v1/fill/w_486,h_514,al_c,lg_1,q_80,enc_auto/LVAD%20(2).jpg",
+        "name": "Left Ventricular Assist Device (LVAD)",
+        "about": "A left ventricular assist device (LVAD) is a pump that we use for patients who have reached end-stage heart failure. We surgically implant the LVAD, a battery-operated, mechanical pump, which then helps the left ventricle (main pumping chamber of the heart) pump blood to the rest of the body. LVADs can be used as: Bridge-to-transplant therapy: This is a life-saving therapy for patients awaiting a heart transplant. Patients use the LVAD until a heart becomes available. In some cases, the LVAD is able to restore the failing heart, eliminating the need for a transplant. Learn more about heart transplant.Destination therapy: Some patients are not candidates for heart transplants. In this case, patients can receive long-term treatment using an LVAD, which can prolong and improve patients' lives.\r\n"
+    },
+    {
+        "_id": "3",
+        "balance": "$2,34",
+        "picture": "https://www.ahajournals.org/cms/asset/94db19da-7772-47f4-812e-1a405116f1f8/zhc0291196970001.jpeg",
+        "name": "Heart Transplant",
+        "about": "Doctors will first try to manage heart failure through medications or electrical devices. However, when the heart failure becomes severe, the patient might need a new heart. Heart transplant surgery is the process of replacing a diseased heart with a healthy donor heart.\r\n"
+    },
+    {
+        "_id": "4",
+        "balance": "$2,19",
+        "picture": "https://www.drrahulkaiche.com/wp-content/uploads/2020/03/heart_tetralogy_fallot.png",
+        "name": "Adult Congenital Heart Disease Surgery",
+        "about": "The specific services available to your patients suffering from adult congenital heart disease include: Minimally invasive, limited incision repair of congenital defects Reoperative procedures for correction of progressive congenital heart diseaseCombined heart and lung transplantation for end-staged congenital heart disease\r\n"
+    },
+    {
+        "_id": "5",
+        "balance": "$2,21",
+        "picture": "https://www.carolinaheartandleg.com/wp-content/uploads/2018/04/ARRHYTMIA-2.jpg",
+        "name": "Heart arrhythmia surgery",
+        "about": "Our electrophysiologists and their teams have specialized expertise in all types of arrhythmia. We begin with a comprehensive diagnostic evaluation to thoroughly understand your symptoms. Our doctors are especially skilled at interpreting test results, which helps us better plan your care. With years of experience, we are leading research and practice of innovative therapies that offer a long-term solution for arrhythmia. Our focus is on expert care that relieves your symptoms, prevents complications, and improves your health. \r\n"
+    },
+    {
+        "_id": "6",
+        "balance": "$1,73",
+        "picture": "https://media.istockphoto.com/id/505866198/vector/heart-valve-surgery.jpg?s=170667a&w=is&k=20&c=2FElZmZuxQqNy3wFHp7xBpbyj5aMTq6500OKv0o--PE=",
+        "name": "Aortic Valve Surgery",
+        "about": "Our electrophysiologists and their teams have specialized expertise in all types of arrhythmia. We begin with a comprehensive diagnostic evaluation to thoroughly understand your symptoms. Our doctors are especially skilled at interpreting test results, which helps us better plan your care.With years of experience, we are leading research and practice of innovative therapies that offer a long-term solution for arrhythmia. Our focus is on expert care that relieves your symptoms, prevents complications, and improves your health. \r\n"
+    }
+]
