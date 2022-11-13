@@ -1,5 +1,6 @@
 import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blogs/Blog";
+import HeartCheckDetails from "../../Pages/Home/HeartCheck/HeartCheckDetails";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login";
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/heartcheckdetails',
+                element: <HeartCheckDetails></HeartCheckDetails>
             }
 
         ]
