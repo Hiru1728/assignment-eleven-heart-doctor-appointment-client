@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
-import img from '../../../assets/austin+kosier+heart+anatomy+cardiac+structures-removebg-preview.png'
+import img from '../../../assets/heart.png'
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
