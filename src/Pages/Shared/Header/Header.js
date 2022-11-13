@@ -45,7 +45,7 @@ const Header = () => {
                     <img src={img} alt="" />
 
                 </Link>
-                <span className='font-semibold'>Heart Doctor</span>
+                <span className='font-bold text-orange-400 px-2'>Heart Doctor</span>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
@@ -53,7 +53,9 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <button className="btn btn-outline btn-warning">Blog</button>
+                <button className="btn btn-outline btn-warning">
+                    <Link to='/blog'>Blog</Link>
+                </button>
             </div>
         </div>
     );
