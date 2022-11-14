@@ -5,7 +5,7 @@ import ServicesItem from './ServicesItem';
 
 const Services = () => {
     const [services, setServices] = useState([]);
-    fetch('https://assignment-eleven-heart-doctor-appointment-server.vercel.app/services')
+    fetch('https://assignment-eleven-heart-doctor-appointment-server.vercel.app/homeservices')
         .then(res => res.json())
         .then(data => setServices(data));
     return (
@@ -20,11 +20,13 @@ const Services = () => {
                     ></ServicesItem>)
                 }
             </div>
-            <button className='btn btn-warning py-3'>
-                <Link to='/servicesitem'>
-                    All Services
-                </Link>
-            </button>
+            <div className=' items-center text-center'>
+                <button className='btn btn-wide btn-warning my-4'>
+                    <Link to='/servicesitem'>
+                        All Services
+                    </Link>
+                </button>
+            </div>
         </div>
     );
 };

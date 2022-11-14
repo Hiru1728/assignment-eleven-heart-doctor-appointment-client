@@ -3,6 +3,7 @@ import Blog from "../../Pages/Blogs/Blog";
 import HeartCheckDetails from "../../Pages/Home/HeartCheck/HeartCheckDetails";
 import Home from "../../Pages/Home/Home/Home";
 import AllService from "../../Pages/Home/Services/AllService";
+import ShowService from "../../Pages/Home/Services/ShowService";
 import Login from "../../Pages/Login/Login";
 import SignUp from "../../Pages/SignUp/SignUp";
 
@@ -24,7 +25,11 @@ const router = createBrowserRouter([
             {
                 path: '/servicesitem',
                 element: <AllService></AllService>,
-                loader: () => fetch('https://assignment-eleven-heart-doctor-appointment-server.vercel.app/services'),
+            },
+            {
+                path: '/services/:id',
+                element: <ShowService></ShowService>,
+                loader: ({ params }) => fetch(`https://assignment-eleven-heart-doctor-appointment-server.vercel.app/services/${params.id}`)
             },
             {
                 path: '/signup',
