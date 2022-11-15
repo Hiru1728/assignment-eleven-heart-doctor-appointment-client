@@ -82,28 +82,35 @@ const ShowService = () => {
                 }
 
                 <div>
-                    <h3 className="text-2xl">Total {reviews.length} reviews</h3>
-                    <div className="overflow-x-auto w-auto">
-                        <table className="table w-auto lg:w-full">
-                            <thead>
-                                <tr>
-                                    <th>Surgery Name</th>
-                                    <th>Message</th>
-                                    <th>Email</th>
-                                    <th>User Image</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {
-                                    reviews.map(review => <ShowAllReview
-                                        key={review._id}
-                                        review={review}
-                                    ></ShowAllReview>)
-                                }
-                            </tbody>
+                    {
+                        reviews.length === 0 ? <h1>No reviews are added</h1>
+                            :
+                            <div>
+                                <h3 className="text-2xl">Total {reviews.length} reviews</h3>
+                                <div className="overflow-x-auto w-auto">
+                                    <table className="table w-auto lg:w-full">
+                                        <thead>
+                                            <tr>
+                                                <th>Surgery Name</th>
+                                                <th>Message</th>
+                                                <th>Email</th>
+                                                <th>User Image</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {
+                                                reviews.map(review => <ShowAllReview
+                                                    key={review._id}
+                                                    review={review}
+                                                ></ShowAllReview>)
+                                            }
+                                        </tbody>
 
-                        </table>
-                    </div>
+                                    </table>
+                                </div>
+                            </div>
+                    }
+
 
                 </div>
             </div>

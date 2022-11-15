@@ -1,7 +1,7 @@
 import userEvent from '@testing-library/user-event';
 import React, { useEffect, useState } from 'react';
 
-const MyAllReview = ({ review }) => {
+const MyAllReview = ({ review,handleDelete,handleStatusUpdate }) => {
     const { _id, serviceName, service, email, message, img } = review;
     const [myreview, setMyReview] = useState({});
 
@@ -19,7 +19,9 @@ const MyAllReview = ({ review }) => {
     return (
         <tr>
             <th>
-
+                <label>
+                    <button onClick={() => handleDelete(_id)} className='btn btn-ghost'>X</button>
+                </label>
             </th>
             <td>
                 <div className="flex items-center space-x-3">
@@ -44,6 +46,9 @@ const MyAllReview = ({ review }) => {
                     </div>
                 </div>
             </td>
+            <th>
+                <button onClick={() => handleStatusUpdate(_id)} className="btn btn-ghost btn-xs">{status ? status : 'pending'}</button>
+            </th>
         </tr>
     );
 };

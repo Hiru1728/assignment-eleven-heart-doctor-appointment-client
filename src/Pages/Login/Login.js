@@ -21,9 +21,26 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
 
+                const currentUser = {
+                    email: user.email
+                }
+
+                fetch('https://assignment-eleven-heart-doctor-appointment-server.vercel.app/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(currentUser)
+
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        localStorage.setItem('genius token',data.token);
+                        navigate(from, { relative: true });
+                    })
 
 
-                navigate(from, { relative: true });
                 form.reset();
             })
             .catch(error => console.log('Main error', error))
