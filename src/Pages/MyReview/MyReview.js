@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 import MyAllReview from './MyAllReview';
 
 const MyReview = () => {
     const { user, logOut } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
+    useTitle('My Review');
 
     useEffect(() => {
         fetch(`https://assignment-eleven-heart-doctor-appointment-server.vercel.app/reviews?email=${user?.email}`, {

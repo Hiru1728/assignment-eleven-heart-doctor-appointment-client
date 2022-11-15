@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../../../hooks/useTitle';
 import AllService from './AllService';
 import ServicesItem from './ServicesItem';
 
 const Services = () => {
+    useTitle('All Services')
     const [services, setServices] = useState([]);
     fetch('https://assignment-eleven-heart-doctor-appointment-server.vercel.app/homeservices')
         .then(res => res.json())

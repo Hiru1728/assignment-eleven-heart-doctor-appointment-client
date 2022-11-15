@@ -1,8 +1,8 @@
 import userEvent from '@testing-library/user-event';
 import React, { useEffect, useState } from 'react';
 
-const MyAllReview = ({ review,handleDelete,handleStatusUpdate }) => {
-    const { _id, serviceName, service, email, message, img } = review;
+const MyAllReview = ({ review, handleDelete, handleStatusUpdate }) => {
+    const { _id, serviceName, status, service, email, message, img } = review;
     const [myreview, setMyReview] = useState({});
 
     useEffect(() => {

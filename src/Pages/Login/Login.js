@@ -3,11 +3,13 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import img from '../../assets/login/login.png'
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
     const { login } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
+    useTitle('Login');
 
     const from = location.state?.from?.pathname || '/';
 
@@ -36,7 +38,7 @@ const Login = () => {
                     .then(res => res.json())
                     .then(data => {
                         console.log(data)
-                        localStorage.setItem('genius token',data.token);
+                        localStorage.setItem('genius token', data.token);
                         navigate(from, { relative: true });
                     })
 
