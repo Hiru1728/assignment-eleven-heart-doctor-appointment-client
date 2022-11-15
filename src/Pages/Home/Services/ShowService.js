@@ -1,21 +1,25 @@
-import React, { useContext, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import ShowAllReview from './ShowAllReview/ShowAllReview';
 
 const ShowService = () => {
     const { user } = useContext(AuthContext);
-    const [reviews, setReviews] = useState({});
+    const [reviews, setReviews] = useState([]);
     const serviceShow = useLoaderData();
     const { picture, balance, _id, name, about } = serviceShow;
 
-    const url = `https://assignment-eleven-heart-doctor-appointment-server.vercel.app/reviews`;
 
-    fetch(url)
-        .then(res => res.json())
-        .then(data => {
-            setReviews(data)
-        })
+    // const url = `https://assignment-eleven-heart-doctor-appointment-server.vercel.app/reviews/${_id}`;
+
+    useEffect(() => {
+        fetch(`https://assignment-eleven-heart-doctor-appointment-server.vercel.app/review?service=${_id}`)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setReviews(data)
+            })
+    }, [reviews, _id])
 
 
     const addReview = (event) => {
@@ -59,9 +63,6 @@ const ShowService = () => {
                 <h2 className="card-title">{name}</h2>
                 <h4>Coast: {balance}</h4>
                 <p>{about}</p>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Add Review</button>
-                </div>
 
                 {
                     (user?.email) ?
@@ -73,14 +74,38 @@ const ShowService = () => {
                         </form>
                         :
                         <div>
-                            {
-                                reviews.map(review => <ShowAllReview
-                                    key={review._id}
-                                    review={review}
-                                ></ShowAllReview>)
-                            }
+                            <h1 className='text-center lg:text-4xl'>Please login to add a review
+                                <button className='btn btn-outline btn-warning ml-4'><Link to='/login'>Log In</Link></button>
+                            </h1>
                         </div>
+
                 }
+
+                <div>
+                    <h3 className="text-2xl">Total {reviews.length} reviews</h3>
+                    <div className="overflow-x-auto w-auto">
+                        <table className="table w-auto lg:w-full">
+                            <thead>
+                                <tr>
+                                    <th>Surgery Name</th>
+                                    <th>Message</th>
+                                    <th>Email</th>
+                                    <th>User Image</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    reviews.map(review => <ShowAllReview
+                                        key={review._id}
+                                        review={review}
+                                    ></ShowAllReview>)
+                                }
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                </div>
             </div>
         </div>
     );

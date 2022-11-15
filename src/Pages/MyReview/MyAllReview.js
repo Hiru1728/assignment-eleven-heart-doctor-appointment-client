@@ -8,8 +8,13 @@ const MyAllReview = ({ review }) => {
     useEffect(() => {
         fetch(`https://genius-car-server-rosy-delta.vercel.app/services/${service}`)
             .then(res => res.json())
-            .then(data => setMyReview(data))
+            .then(data => {
+                console.log(data)
+                setMyReview(data)
+            })
     }, [service])
+
+
 
     return (
         <tr>
