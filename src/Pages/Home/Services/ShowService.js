@@ -9,7 +9,7 @@ const ShowService = () => {
     const serviceShow = useLoaderData();
     const { picture, balance, _id, name, about } = serviceShow;
 
-    const url = `https://assignment-eleven-heart-doctor-appointment-server.vercel.app/reviews?`;
+    const url = `https://assignment-eleven-heart-doctor-appointment-server.vercel.app/reviews`;
 
     fetch(url)
         .then(res => res.json())
