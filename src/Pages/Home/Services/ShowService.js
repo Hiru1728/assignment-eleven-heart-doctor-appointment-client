@@ -13,7 +13,7 @@ const ShowService = () => {
         fetch(`https://assignment-eleven-heart-doctor-appointment-server.vercel.app/review?service=${_id}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+
                 setReviews(data)
             })
     }, [reviews, _id])
@@ -27,7 +27,7 @@ const ShowService = () => {
         const img = user?.photoURL || 'No image';
 
 
-        console.log(user.name);
+        // console.log(user.name);
 
         const review = {
             service: _id,
@@ -55,13 +55,13 @@ const ShowService = () => {
             .catch(error => console.error(error))
     }
 
-    if (loading) {
-        return <button type="button" class="bg-indigo-500 ..." disabled>
-            <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-            </svg>
-            Loading...
-        </button>
-    }
+    // if (loading) {
+    //     return <button type="button" class="bg-indigo-500 ..." disabled>
+    //         <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+    //         </svg>
+    //         Loading...
+    //     </button>
+    // }
 
 
     return (
