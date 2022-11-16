@@ -6,6 +6,7 @@ import AllService from "../../Pages/Home/Services/AllService";
 import ShowService from "../../Pages/Home/Services/ShowService";
 import Login from "../../Pages/Login/Login";
 import MyReview from "../../Pages/MyReview/MyReview";
+import UpdateReview from "../../Pages/MyReview/UpdateReview";
 import SignUp from "../../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/servicesitem',
-                element: <PrivateRoute><AllService></AllService></PrivateRoute>,
+                element: <AllService></AllService>,
             },
             {
                 path: '/services/:id',
@@ -35,7 +36,12 @@ const router = createBrowserRouter([
             },
             {
                 path: '/myreviews',
-                element: <MyReview></MyReview>
+                element: <PrivateRoute><MyReview></MyReview></PrivateRoute>
+            },
+            {
+                path: '/reviews/:id',
+                element: <UpdateReview></UpdateReview>,
+                loader: ({ params }) => fetch(`https://assignment-eleven-heart-doctor-appointment-server.vercel.app/reviews/${params.id}`)
             },
             {
                 path: '/signup',
@@ -49,7 +55,6 @@ const router = createBrowserRouter([
                 path: '/heartcheckdetails',
                 element: <HeartCheckDetails></HeartCheckDetails>
             }
-
         ]
     }
 

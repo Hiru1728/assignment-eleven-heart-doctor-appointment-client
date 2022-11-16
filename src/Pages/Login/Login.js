@@ -6,12 +6,20 @@ import SocialLogin from '../Shared/SocialLogin/SocialLogin';
 import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
-    const { login } = useContext(AuthContext);
+    const { login, loading } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
     useTitle('Login');
 
     const from = location.state?.from?.pathname || '/';
+
+    if (loading) {
+        return <button type="button" class="bg-indigo-500 ..." disabled>
+            <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+            </svg>
+            Loading...
+        </button>
+    }
 
     const handleLogin = event => {
         event.preventDefault();

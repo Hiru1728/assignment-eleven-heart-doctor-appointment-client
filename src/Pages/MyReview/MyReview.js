@@ -4,14 +4,16 @@ import useTitle from '../../hooks/useTitle';
 import MyAllReview from './MyAllReview';
 
 const MyReview = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut, loading } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
     useTitle('My Review');
+
+
 
     useEffect(() => {
         fetch(`https://assignment-eleven-heart-doctor-appointment-server.vercel.app/reviews?email=${user?.email}`, {
             headers: {
-                authorization: `Bearer ${localStorage.getItem('genius-token')}`
+                authorization: `Bearer ${localStorage.getItem('genius token')}`
             }
 
         })
@@ -49,27 +51,12 @@ const MyReview = () => {
         }
     }
 
-    const handleStatusUpdate = id => {
-        fetch(`https://assignment-eleven-heart-doctor-appointment-server.vercel.app/reviews/${id}`, {
-            method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-                authorization: `Bearer ${localStorage.getItem('genius token')}`
-            },
-            body: JSON.stringify({ status: 'Approved' })
-        })
-            .then(res => res.json())
-            .then(data => {
-                if (data.modifiedCount > 0) {
-                    alert('Updated Successfully');
-                    const remaining = reviews.filter(review => review.id !== id);
-                    const approving = reviews.find(review => review._id === id);
-                    approving.status = 'Approved'
-
-                    const newReviews = [approving, ...remaining];
-                    setReviews(newReviews);
-                }
-            })
+    if (loading) {
+        return <button type="button" class="bg-indigo-500 ..." disabled>
+            <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+            </svg>
+            Loading...
+        </button>
     }
 
     return (
@@ -85,12 +72,13 @@ const MyReview = () => {
                             <table className="table w-full">
                                 <thead>
                                     <tr>
-
+                                        <th>Delete Btn</th>
                                         <th>Surgery Image</th>
                                         <th>Surgery Name</th>
                                         <th>Message</th>
                                         <th>Email</th>
                                         <th>User Image</th>
+                                        <th>Update Btn</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -99,7 +87,7 @@ const MyReview = () => {
                                             key={review._id}
                                             review={review}
                                             handleDelete={handleDelete}
-                                            handleStatusUpdate={handleStatusUpdate}
+
                                         ></MyAllReview>)
                                     }
                                 </tbody>

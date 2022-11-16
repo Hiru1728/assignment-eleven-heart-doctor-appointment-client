@@ -4,13 +4,10 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import ShowAllReview from './ShowAllReview/ShowAllReview';
 
 const ShowService = () => {
-    const { user } = useContext(AuthContext);
+    const { user, loading } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
     const serviceShow = useLoaderData();
     const { picture, balance, _id, name, about } = serviceShow;
-
-
-    // const url = `https://assignment-eleven-heart-doctor-appointment-server.vercel.app/reviews/${_id}`;
 
     useEffect(() => {
         fetch(`https://assignment-eleven-heart-doctor-appointment-server.vercel.app/review?service=${_id}`)
@@ -56,7 +53,13 @@ const ShowService = () => {
             .catch(error => console.error(error))
     }
 
-
+    if (loading) {
+        return <button type="button" class="bg-indigo-500 ..." disabled>
+            <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
+            </svg>
+            Loading...
+        </button>
+    }
 
 
     return (
@@ -97,6 +100,7 @@ const ShowService = () => {
                                                 <th>Surgery Name</th>
                                                 <th>Message</th>
                                                 <th>Email</th>
+                                                <th>User Name</th>
                                                 <th>User Image</th>
                                             </tr>
                                         </thead>

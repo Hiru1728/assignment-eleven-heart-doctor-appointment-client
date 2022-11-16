@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../../context/AuthProvider/AuthProvider';
 
 const ShowAllReview = ({ review }) => {
+    const { user } = useContext(AuthContext);
     const { message, email, serviceName, img } = review;
     return (
         <tr>
@@ -15,6 +17,9 @@ const ShowAllReview = ({ review }) => {
             </td>
             <td>
                 {email}
+            </td>
+            <td>
+                {user?.name ? user.name : 'No name'}
             </td>
             <td>
                 <div className="avatar items-center">
