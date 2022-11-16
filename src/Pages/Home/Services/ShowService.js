@@ -27,6 +27,8 @@ const ShowService = () => {
         const img = user?.photoURL || 'No image';
 
 
+        console.log(user.name);
+
         const review = {
             service: _id,
             serviceName: name,
