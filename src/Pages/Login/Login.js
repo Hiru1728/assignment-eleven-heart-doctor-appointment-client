@@ -39,10 +39,9 @@ const Login = () => {
                     .then(data => {
                         console.log(data)
                         localStorage.setItem('genius token', data.token);
-                        navigate(from, { relative: true });
+
                     })
-
-
+                navigate(from, { relative: true });
                 form.reset();
             })
             .catch(error => console.log('Main error', error))

@@ -39,6 +39,10 @@ const MyAllReview = ({ review, handleDelete, handleStatusUpdate }) => {
 
             </td>
             <td>
+                {email}
+            </td>
+
+            <td>
                 <div className="avatar">
                     <div className="rounded w-24 h-24">
 

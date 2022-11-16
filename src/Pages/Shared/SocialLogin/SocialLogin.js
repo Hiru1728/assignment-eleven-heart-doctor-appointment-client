@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { setAuthToken } from '../../../api/auth';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 
@@ -10,8 +11,7 @@ const SocialLogin = () => {
         googleSignIn()
             .then(result => {
                 const user = result.user;
-                console.log(user);
-
+                setAuthToken(user);
             })
             .catch(error => console.log(error))
     }
@@ -20,7 +20,7 @@ const SocialLogin = () => {
         <div>
             <p className='text-center'>
                 <button onClick={handleGoogleSignIn} className='btn btn-warning w-auto'>
-                    Google
+                    Sign in with Google
                 </button>
             </p>
         </div>

@@ -89,6 +89,7 @@ const MyReview = () => {
                                         <th>Surgery Image</th>
                                         <th>Surgery Name</th>
                                         <th>Message</th>
+                                        <th>Email</th>
                                         <th>User Image</th>
                                     </tr>
                                 </thead>

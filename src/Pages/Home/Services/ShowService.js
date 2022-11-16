@@ -47,8 +47,11 @@ const ShowService = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
-                form.reset();
+                if (data.acknowledged) {
+                    alert('Review added successfully');
+                    form.reset();
+                }
+
             })
             .catch(error => console.error(error))
     }

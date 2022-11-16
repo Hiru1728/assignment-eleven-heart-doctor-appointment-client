@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import img from '../../assets/signup/sign-up-concep.webp'
 import useTitle from '../../hooks/useTitle';
+import { setAuthToken } from '../../api/auth';
 
 const SignUp = () => {
     const { createUser } = useContext(AuthContext);
@@ -17,6 +18,7 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                setAuthToken(user);
             })
             .catch(err => console.error(err));
     }
@@ -49,7 +51,7 @@ const SignUp = () => {
                             <input type="password" name='password' placeholder="Your password" className="input input-bordered" required />
                         </div>
                         <div className="form-control mt-6">
-                            <input className='btn btn-primary' type="submit" value="Sign Up" />
+                            <input className='btn btn-warning' type="submit" value="Sign Up" />
                         </div>
                     </form>
                     <p className='text-center'>Already have an account? <Link className='text-orange-600 font-bold' to="/login">Log In</Link> </p>
