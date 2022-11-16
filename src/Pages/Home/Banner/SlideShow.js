@@ -25,7 +25,7 @@ const SlideShow = ({ slide }) => {
                     <Link to='/login'>Log In</Link>
                 </button>
                 <button className="btn btn-outline btn-warning">
-                    Sign Up
+                    <Link to='/signup'>Sign Up</Link>
                 </button>
             </div>
             <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 bottom-0">
